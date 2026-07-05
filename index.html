@@ -936,6 +936,19 @@
       el.addEventListener('mouseleave', () => el.style.gap = '8px')
     }
   })
+
+  // Keep the URL clean: scroll to in-page anchors without leaving a #hash behind
+  document.querySelectorAll('a[href^="#"]').forEach(el => {
+    const targetId = el.getAttribute('href').slice(1)
+    if (!targetId) return
+    const target = document.getElementById(targetId)
+    if (!target) return
+    el.addEventListener('click', (e) => {
+      e.preventDefault()
+      target.scrollIntoView({ behavior: 'smooth' })
+      history.replaceState(null, '', location.pathname + location.search)
+    })
+  })
 </script>
 
 </body>
