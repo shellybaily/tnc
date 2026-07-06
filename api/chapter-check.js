@@ -86,10 +86,11 @@ async function buildAttributes(body, contactExists) {
     if (value !== undefined) attrs.CURRENT_STATUS = value
   }
 
-  // INDUSTRY, CHALLENGE and EXPECTATIONS are Brevo "Multiple choice" attributes: send an
-  // array of the selected option strings, never a comma-joined string.
-  if (nonEmptyString(body.industry)) attrs.INDUSTRY = [body.industry.trim()]
+  // INDUSTRY_NEW is a Brevo "Text" attribute: send the plain trimmed string.
+  if (nonEmptyString(body.industry)) attrs.INDUSTRY_NEW = body.industry.trim()
 
+  // CHALLENGE and EXPECTATIONS are Brevo "Multiple choice" attributes: send an
+  // array of the selected option strings, never a comma-joined string.
   if (nonEmptyArray(body.challenge)) {
     attrs.CHALLENGE = body.challenge.filter(nonEmptyString)
   }
