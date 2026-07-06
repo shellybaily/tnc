@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Datenschutzerklärung — The Next Chapter</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary:      '#8B1527',
+            'primary-lt': '#A3202F',
+            'primary-dk': '#6B1020',
+            'primary-deep':'#3D0910',
+            'primary-tint':'#F2E6E8',
+            'rose-creme': '#C4A47C',
+            'rose-lt':    '#DEC9A8',
+            'rose-tint':  '#F5EEE4',
+            cream:        '#FAF6F0',
+            'cream-dk':   '#EDE8E1',
+            charcoal:     '#0C0A0B',
+            stone:        '#6B6560',
+            silver:       '#9BAAB5',
+          },
+          fontFamily: {
+            display: ['Cinzel', 'Georgia', 'serif'],
+            body:    ['Montserrat', 'system-ui', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    :root {
+      --bordeaux:   #8B1527;
+      --bordeaux-lt:#A3202F;
+      --rose-creme: #C4A47C;
+      --rose-tint:  #F5EEE4;
+      --soft-beige: #EDE8E1;
+      --cream:      #FAF6F0;
+      --charcoal:   #0C0A0B;
+      --stone:      #6B6560;
+      --silver:     #9BAAB5;
+    }
+    body { font-family: 'Montserrat', sans-serif; background: var(--cream); color: var(--charcoal); -webkit-font-smoothing: antialiased; margin: 0; }
+
+    /* ── Nav ── */
+    .nav-link {
+      font-family: 'Montserrat', sans-serif; font-size: 0.85rem; font-weight: 500;
+      color: #0C0C0C; text-decoration: none; position: relative;
+      transition: color 0.2s ease;
+    }
+    .nav-link::after {
+      content: ''; position: absolute; bottom: -3px; left: 0; right: 100%;
+      height: 1.5px; background: #8B1527;
+      transition: right 0.28s cubic-bezier(0.34,1.56,0.64,1);
+    }
+    .nav-link:hover { color: #8B1527; }
+    .nav-link:hover::after { right: 0; }
+    .nav-link:focus-visible { outline: 2px solid #8B1527; outline-offset: 4px; }
+
+    .btn-primary {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      background: #6F060D; color: #FAF6F0; font-family: 'Montserrat', sans-serif;
+      font-weight: 600; font-size: 0.875rem; letter-spacing: 0.04em;
+      padding: 14px 32px; border-radius: 100px;
+      box-shadow: 0 4px 20px rgba(111,6,13,0.35), 0 1px 6px rgba(111,6,13,0.18);
+      transition: transform 0.3s cubic-bezier(0.4,0,0.2,1),
+                  background 0.3s cubic-bezier(0.4,0,0.2,1),
+                  color 0.3s cubic-bezier(0.4,0,0.2,1),
+                  box-shadow 0.3s cubic-bezier(0.4,0,0.2,1);
+      cursor: pointer; text-decoration: none;
+    }
+    .btn-primary:hover { background: #A6C9FC; color: #0C0C0C; transform: translateY(-2px); box-shadow: 0 10px 25px rgba(166,201,252,0.35); }
+    .btn-primary:active { transform: translateY(0); }
+    .btn-primary:focus-visible { outline: 2px solid #6F060D; outline-offset: 3px; }
+
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: 'Montserrat', sans-serif; font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase; color: #8B1527;
+    }
+    .eyebrow-dot { width: 6px; height: 6px; border-radius: 50%; background: #8B1527; flex-shrink: 0; }
+
+    .nav-scrolled { box-shadow: 0 1px 20px rgba(0,0,0,0.07); }
+
+    /* ── Legal content typography ── */
+    .legal h2 {
+      font-family: 'Cinzel', serif; font-weight: 700; letter-spacing: -0.01em;
+      color: #0C0C0C; font-size: clamp(1.2rem, 2.2vw, 1.5rem);
+      margin: 56px 0 18px;
+    }
+    .legal h2:first-of-type { margin-top: 0; }
+    .legal h3 {
+      font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 0.98rem;
+      color: #0C0C0C; margin: 28px 0 10px;
+    }
+    .legal p { font-size: 0.95rem; line-height: 1.85; color: #6B6560; margin: 0 0 16px; }
+    .legal ul { margin: 0 0 16px; padding-left: 22px; display: flex; flex-direction: column; gap: 8px; }
+    .legal li { font-size: 0.95rem; line-height: 1.75; color: #6B6560; }
+    .legal a { color: #8B1527; text-decoration: underline; font-weight: 600; }
+    .legal strong { color: #0C0C0C; }
+    .legal .toc-link { font-size: 0.85rem; }
+
+    .todo-box {
+      background: var(--rose-tint); border: 1.5px dashed rgba(139,21,39,0.4);
+      border-radius: 16px; padding: 24px 28px; margin: 0 0 40px;
+    }
+    .todo-box p { color: #6B1020; margin: 0 0 10px; }
+    .todo-box ul { margin: 0; padding-left: 20px; }
+    .todo-box li { color: #6B1020; }
+
+    @media (max-width: 767px) {
+      .hero-grid { grid-template-columns: 1fr !important; }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ══════════════════════════════════════════════
+     NAVIGATION
+══════════════════════════════════════════════ -->
+<nav id="nav" style="position: fixed; top: 0; left: 0; right: 0; z-index: 50; background: rgba(250,246,240,0.96); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid rgba(12,12,12,0.07); transition: box-shadow 0.3s ease;">
+  <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px; height: 116px; display: flex; align-items: center; justify-content: space-between;">
+
+    <a href="/" aria-label="The Next Chapter Home" style="flex-shrink: 0;">
+      <img src="brand_assets/Logo Transparent.png" alt="The Next Chapter" style="height: 104px; width: auto;">
+    </a>
+
+    <div class="hidden md:flex" style="gap: 36px; align-items: center;">
+      <a href="/#hero" class="nav-link">Home</a>
+      <a href="/#Mehrwert" class="nav-link">Dein Weg</a>
+      <a href="/#programs" class="nav-link">Unser Programm</a>
+      <a href="https://calendly.com/tnchapter/30min" target="_blank" rel="noopener noreferrer" class="nav-link">Termin vereinbaren</a>
+    </div>
+
+    <a href="/#guide" class="btn-primary" style="font-size: 0.8rem; padding: 10px 24px;">kostenloser Guide</a>
+
+  </div>
+</nav>
+
+
+<!-- ══════════════════════════════════════════════
+     DATENSCHUTZERKLÄRUNG
+══════════════════════════════════════════════ -->
+<section style="padding: 168px 24px 96px; background: #FAF6F0;">
+  <div style="max-width: 760px; margin: 0 auto;">
+
+    <div class="eyebrow" style="margin-bottom: 20px;">
+      <span class="eyebrow-dot"></span>
+      Rechtliches
+    </div>
+    <h1 style="font-family: 'Cinzel', serif; font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 700; line-height: 1.15; letter-spacing: -0.02em; color: #0C0C0C; margin: 0 0 16px;">
+      Datenschutzerklärung
+    </h1>
+    <p style="font-size: 0.85rem; color: #9BAAB5; margin: 0 0 48px;">Stand: Juli 2026</p>
+
+    <div class="todo-box">
+      <p style="font-weight: 700;">⚠ Vor Veröffentlichung noch zu ergänzen</p>
+      <p>Diese Datenschutzerklärung enthält an mehreren Stellen Platzhalter, da folgende rechtlich verpflichtende Angaben zum Verantwortlichen noch fehlen. Bitte ergänzen, bevor die Seite live geht:</p>
+      <ul>
+        <li>Vollständiger Name / Firmierung und Rechtsform des Verantwortlichen</li>
+        <li>Ladungsfähige Anschrift (Straße, Hausnummer, PLZ, Ort, Land)</li>
+        <li>Vertretungsberechtigte Person (z. B. Inhaber:in / Geschäftsführung)</li>
+        <li>Telefonnummer für den Kontakt</li>
+        <li>Handelsregisternummer &amp; Registergericht sowie USt-IdNr., falls vorhanden</li>
+        <li>Angabe, ob ein:e Datenschutzbeauftragte:r bestellt ist (inkl. Kontaktdaten), falls zutreffend</li>
+      </ul>
+    </div>
+
+    <div class="legal">
+
+      <h2 id="verantwortlicher">1. Verantwortlicher</h2>
+      <p>Verantwortlich für die Datenverarbeitung auf dieser Website im Sinne der Datenschutz-Grundverordnung (DSGVO) ist:</p>
+      <p>
+        <strong>[BITTE ERGÄNZEN: Vollständiger Name / Firma, Rechtsform]</strong><br>
+        [BITTE ERGÄNZEN: Straße und Hausnummer]<br>
+        [BITTE ERGÄNZEN: PLZ und Ort]<br>
+        Deutschland<br><br>
+        E-Mail: <a href="mailto:shellyy222@web.de">shellyy222@web.de</a><br>
+        Telefon: [BITTE ERGÄNZEN]
+      </p>
+      <p>Ein:e Datenschutzbeauftragte:r ist [BITTE ERGÄNZEN: „nicht bestellt, da gesetzlich nicht erforderlich" oder Kontaktdaten der/des Datenschutzbeauftragten].</p>
+
+      <h2 id="allgemein">2. Allgemeine Hinweise</h2>
+      <p>Der Schutz Ihrer personenbezogenen Daten ist uns wichtig. Wir verarbeiten Ihre Daten ausschließlich auf Grundlage der gesetzlichen Bestimmungen (DSGVO, Bundesdatenschutzgesetz – BDSG). In dieser Datenschutzerklärung informieren wir Sie über die wichtigsten Aspekte der Datenverarbeitung im Rahmen unserer Website.</p>
+
+      <h2 id="hosting">3. Hosting</h2>
+      <p>Diese Website wird bei <strong>Vercel Inc.</strong>, 340 S Lemon Ave #4133, Walnut, CA 91789, USA, gehostet. Beim Aufruf der Website erhebt Vercel automatisch technische Zugriffsdaten (sog. Server-Logfiles), z. B. IP-Adresse, Datum und Uhrzeit des Zugriffs, aufgerufene Seite, verwendeter Browser und Betriebssystem sowie die zuvor besuchte Seite (Referrer-URL).</p>
+      <p>Die Verarbeitung erfolgt, um eine stabile, sichere und performante Bereitstellung unserer Website zu gewährleisten. Rechtsgrundlage ist unser berechtigtes Interesse gemäß Art. 6 Abs. 1 lit. f DSGVO.</p>
+      <p>Da Vercel Inc. mit Sitz in den USA ansässig ist, kann es im Rahmen der Verarbeitung zu einer Übermittlung personenbezogener Daten in ein Drittland (USA) kommen. Vercel stützt sich hierbei nach eigenen Angaben auf geeignete Garantien im Sinne von Art. 46 DSGVO, insbesondere EU-Standardvertragsklauseln, bzw. auf den Angemessenheitsbeschluss der EU-Kommission zum EU-US Data Privacy Framework, sofern eine entsprechende Zertifizierung vorliegt.</p>
+
+      <h2 id="cloudflare">4. Domainverwaltung &amp; E-Mail-Weiterleitung (Cloudflare)</h2>
+      <p>Für die Verwaltung der Domain (DNS) sowie für die Weiterleitung eingehender E-Mails an unser tatsächliches Postfach nutzen wir die Dienste der <strong>Cloudflare, Inc.</strong>, 101 Townsend St, San Francisco, CA 94107, USA („Cloudflare").</p>
+      <p>Über die DNS-Verwaltung wird technisch die Erreichbarkeit unserer Domain sichergestellt; hierbei können IP-Adressen der anfragenden Systeme (z. B. Ihres Internetanbieters) verarbeitet werden. Über die Funktion „Email Routing" leitet Cloudflare E-Mails, die an unsere Domain gesendet werden, an unser tatsächliches E-Mail-Postfach weiter. Dabei werden Absenderadresse, Empfängeradresse, Betreff und Inhalt der jeweiligen E-Mail technisch verarbeitet, um die Zustellung zu ermöglichen.</p>
+      <p>Rechtsgrundlage ist unser berechtigtes Interesse an einer zuverlässigen technischen Bereitstellung unserer Domain und E-Mail-Kommunikation (Art. 6 Abs. 1 lit. f DSGVO) bzw., soweit die Weiterleitung im Rahmen der Kommunikation mit Ihnen erfolgt, die Erfüllung vorvertraglicher/vertraglicher Pflichten (Art. 6 Abs. 1 lit. b DSGVO).</p>
+      <p>Cloudflare hat seinen Sitz in den USA, sodass es zu einer Datenübermittlung in ein Drittland kommen kann. Cloudflare stützt sich hierbei nach eigenen Angaben auf EU-Standardvertragsklauseln gemäß Art. 46 DSGVO als geeignete Garantie.</p>
+
+      <h2 id="github">5. Quellcode-Verwaltung (GitHub)</h2>
+      <p>Der Quellcode dieser Website wird in einem privaten bzw. von uns verwalteten Repository bei <strong>GitHub, Inc.</strong>, 88 Colin P Kelly Jr St, San Francisco, CA 94107, USA, verwaltet. GitHub dient uns ausschließlich zur Versionsverwaltung und Bereitstellung des Quellcodes an unseren Hosting-Dienstleister und verarbeitet dabei keine personenbezogenen Daten der Besucher:innen dieser Website. Ein direkter Kontakt Ihres Browsers zu GitHub findet beim Aufruf der Website nicht statt.</p>
+
+      <h2 id="cookies">6. Cookies und lokale Speicherung</h2>
+      <p>Diese Website setzt selbst <strong>keine Cookies</strong> und speichert keine Daten im Local Storage oder Session Storage Ihres Browsers. Es findet keine Wiedererkennung von Nutzer:innen über Cookies statt und es ist deshalb aktuell kein Cookie-Consent-Banner eingebunden.</p>
+      <p>Beim Laden einzelner externer Ressourcen (siehe Ziffern 7–9) ist technisch nicht vollständig auszuschließen, dass der jeweilige Drittanbieter serverseitig eigene Cookies setzt. Sollte sich dies zukünftig ändern, werden wir diese Datenschutzerklärung sowie unsere Einwilligungsprozesse entsprechend anpassen.</p>
+
+      <h2 id="fonts">7. Schriftarten (Google Fonts)</h2>
+      <p>Diese Website bindet zur einheitlichen Darstellung von Schriftarten sogenannte Google Fonts ein, die extern von Servern der <strong>Google Ireland Limited</strong>, Gordon House, Barrow Street, Dublin 4, Irland, geladen werden. Beim Aufruf einer Seite dieser Website lädt Ihr Browser die benötigten Schriftarten direkt von Google, wodurch zwangsläufig Ihre IP-Adresse an Google übermittelt wird.</p>
+      <p>Rechtsgrundlage ist unser berechtigtes Interesse an einer technisch einwandfreien und einheitlichen Darstellung unserer Website (Art. 6 Abs. 1 lit. f DSGVO). Weitere Informationen finden Sie in der Datenschutzerklärung von Google: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">policies.google.com/privacy</a>.</p>
+
+      <h2 id="cdn">8. Eingebundene Skripte (Tailwind CSS)</h2>
+      <p>Zur Gestaltung der Website wird das CSS-Framework „Tailwind CSS" über ein Content Delivery Network (CDN) des Anbieters Tailwind Labs Inc. eingebunden. Beim Laden dieses Skripts wird Ihre IP-Adresse an den jeweiligen Server-Betreiber übermittelt, damit das Skript an Ihren Browser ausgeliefert werden kann.</p>
+      <p>Rechtsgrundlage ist unser berechtigtes Interesse an einer technisch stabilen und effizienten Bereitstellung der Website (Art. 6 Abs. 1 lit. f DSGVO).</p>
+
+      <h2 id="kontakt">9. Kontaktaufnahme per E-Mail</h2>
+      <p>Sie können uns über die auf dieser Website angegebene E-Mail-Adresse kontaktieren. Dabei werden die von Ihnen mitgeteilten Daten (u. a. Ihre E-Mail-Adresse sowie alle in der Nachricht enthaltenen Angaben) von uns gespeichert und ausschließlich zur Bearbeitung und Beantwortung Ihrer Anfrage verwendet.</p>
+      <p>Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO, sofern Ihre Anfrage der Anbahnung oder Erfüllung eines Vertrags dient, andernfalls Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Beantwortung von Anfragen) bzw. Art. 6 Abs. 1 lit. a DSGVO, wenn Sie uns Ihre Einwilligung erteilt haben.</p>
+
+      <h2 id="guide-newsletter">10. Kostenloser Guide &amp; Newsletter-Anmeldung (Brevo)</h2>
+      <p>Auf unserer Website können Sie sich für den Erhalt eines kostenlosen PDF-Guides sowie unseres Newsletters anmelden. Hierfür fragen wir Ihren Namen und Ihre E-Mail-Adresse ab. Die Anmeldung erfolgt im sogenannten <strong>Double-Opt-In-Verfahren</strong>: Nach dem Absenden des Formulars erhalten Sie eine E-Mail mit einem Bestätigungslink. Erst nach Klick auf diesen Link wird Ihre Anmeldung wirksam und Sie erhalten Zugriff auf den Guide sowie zukünftige Newsletter-E-Mails. Damit stellen wir sicher, dass sich niemand mit einer fremden E-Mail-Adresse anmelden kann.</p>
+      <p>Für den Versand des Guides und des Newsletters sowie die Verwaltung der Anmeldungen setzen wir den E-Mail-Marketing-Dienstleister <strong>Brevo SAS</strong> (vormals Sendinblue), 8 rue de Londres, 75009 Paris, Frankreich, ein. Ihre bei der Anmeldung eingegebenen Daten (Name, E-Mail-Adresse, Zeitpunkt der Anmeldung und Bestätigung) werden dabei an Brevo übermittelt und dort auf Servern innerhalb der EU gespeichert und verarbeitet. Mit Brevo besteht ein Vertrag zur Auftragsverarbeitung gemäß Art. 28 DSGVO.</p>
+      <p>Rechtsgrundlage der Verarbeitung ist Ihre Einwilligung gemäß Art. 6 Abs. 1 lit. a DSGVO, die Sie durch Setzen des Häkchens im Anmeldeformular abgeben. Sie können diese Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen, z. B. über den Abmeldelink in jeder Newsletter-E-Mail oder per formloser Mitteilung an die in Ziffer 1 genannte E-Mail-Adresse. Die Rechtmäßigkeit der bis zum Widerruf bereits erfolgten Verarbeitung bleibt hiervon unberührt.</p>
+      <p>Ihre Daten werden gespeichert, solange Sie den Newsletter abonniert haben, und nach einer Abmeldung gelöscht bzw. für einen begrenzten Zeitraum in einer Sperrliste vorgehalten, um eine erneute versehentliche Zusendung zu verhindern.</p>
+
+      <h2 id="pdf">11. PDF-Download (Guide)</h2>
+      <p>Der Guide selbst wird als PDF-Datei direkt von unserem Hosting-Anbieter (siehe Ziffer 3) ausgeliefert. Beim Download werden dabei keine über die in Ziffer 3 beschriebenen Server-Logfiles hinausgehenden personenbezogenen Daten erhoben.</p>
+
+      <h2 id="calendly">12. Terminbuchung über Calendly (externer Link)</h2>
+      <p>An mehreren Stellen unserer Website verlinken wir auf den Terminbuchungsdienst „Calendly" der Calendly LLC, 271 17th St NW, Suite 1000, Atlanta, GA 30363, USA. Diese Links öffnen sich in einem neuen Browser-Tab und führen Sie auf die externe Website von Calendly. Calendly ist <strong>nicht</strong> in Form eines eingebetteten Widgets (iFrame) in unsere Website integriert – beim bloßen Besuch unserer Website werden daher keine Daten an Calendly übermittelt.</p>
+      <p>Erst wenn Sie aktiv auf einen entsprechenden Link klicken und die Seite von Calendly aufrufen bzw. dort einen Termin buchen, verarbeitet Calendly als eigenständig Verantwortlicher Ihre Daten (z. B. Name, E-Mail-Adresse, gewählter Termin) gemäß seiner eigenen Datenschutzerklärung, die Sie hier einsehen können: <a href="https://calendly.com/privacy" target="_blank" rel="noopener noreferrer">calendly.com/privacy</a>. Wir haben auf diese Verarbeitung keinen Einfluss.</p>
+
+      <h2 id="rechte">13. Ihre Rechte als betroffene Person</h2>
+      <p>Ihnen stehen im Hinblick auf die Verarbeitung Ihrer personenbezogenen Daten folgende Rechte zu:</p>
+      <ul>
+        <li>Recht auf Auskunft (Art. 15 DSGVO)</li>
+        <li>Recht auf Berichtigung (Art. 16 DSGVO)</li>
+        <li>Recht auf Löschung (Art. 17 DSGVO)</li>
+        <li>Recht auf Einschränkung der Verarbeitung (Art. 18 DSGVO)</li>
+        <li>Recht auf Datenübertragbarkeit (Art. 20 DSGVO)</li>
+        <li>Widerspruchsrecht gegen die Verarbeitung, die auf Art. 6 Abs. 1 lit. f DSGVO beruht (Art. 21 DSGVO)</li>
+        <li>Recht auf Widerruf einer erteilten Einwilligung mit Wirkung für die Zukunft (Art. 7 Abs. 3 DSGVO)</li>
+      </ul>
+      <p>Zur Ausübung dieser Rechte können Sie sich jederzeit an die in Ziffer 1 genannten Kontaktdaten wenden.</p>
+
+      <h2 id="beschwerde">14. Beschwerderecht bei einer Aufsichtsbehörde</h2>
+      <p>Sie haben unbeschadet anderweitiger verwaltungsrechtlicher oder gerichtlicher Rechtsbehelfe das Recht auf Beschwerde bei einer Datenschutz-Aufsichtsbehörde, insbesondere in dem Mitgliedstaat Ihres Aufenthaltsorts, Ihres Arbeitsplatzes oder des Orts des mutmaßlichen Verstoßes, wenn Sie der Ansicht sind, dass die Verarbeitung der Sie betreffenden personenbezogenen Daten gegen die DSGVO verstößt (Art. 77 DSGVO).</p>
+
+      <h2 id="sicherheit">15. Datensicherheit</h2>
+      <p>Diese Website nutzt aus Sicherheitsgründen eine SSL- bzw. TLS-Verschlüsselung, erkennbar an der Adresszeile Ihres Browsers, die von „http://" auf „https://" wechselt, sowie am Schloss-Symbol. Ist diese Verschlüsselung aktiviert, können die Daten, die Sie an uns übermitteln, nicht von Dritten mitgelesen werden.</p>
+
+      <h2 id="aenderung">16. Aktualität und Änderung dieser Datenschutzerklärung</h2>
+      <p>Diese Datenschutzerklärung ist aktuell gültig (Stand siehe oben). Durch die Weiterentwicklung unserer Website oder aufgrund geänderter gesetzlicher bzw. behördlicher Vorgaben kann es notwendig werden, diese Datenschutzerklärung anzupassen. Die jeweils aktuelle Datenschutzerklärung finden Sie stets auf dieser Seite.</p>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════════ -->
+<footer style="background: #0F0709; border-top: 1px solid rgba(250,246,240,0.06); padding: 64px 24px 40px;">
+  <div style="max-width: 1200px; margin: 0 auto;">
+
+    <!-- Top row -->
+    <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 32px; padding-bottom: 40px; border-bottom: 1px solid rgba(250,246,240,0.08); margin-bottom: 32px;">
+      <a href="/" aria-label="The Next Chapter">
+        <img src="brand_assets/Logo Transparent.png" alt="The Next Chapter" style="height: 112px; width: auto; filter: brightness(0) invert(1); opacity: 0.8;">
+      </a>
+      <nav style="display: flex; flex-wrap: wrap; gap: 32px;" aria-label="Footer navigation">
+        <a href="/#hero" style="font-size: 0.82rem; font-weight: 500; color: rgba(250,246,240,0.45); text-decoration: none; transition: color 0.2s ease;">Home</a>
+        <a href="/#programs" style="font-size: 0.82rem; font-weight: 500; color: rgba(250,246,240,0.45); text-decoration: none; transition: color 0.2s ease;">Unser Programm</a>
+        <a href="/datenschutz" style="font-size: 0.82rem; font-weight: 500; color: rgba(250,246,240,0.45); text-decoration: none; transition: color 0.2s ease;">Datenschutz</a>
+        <a href="/impressum" style="font-size: 0.82rem; font-weight: 500; color: rgba(250,246,240,0.45); text-decoration: none; transition: color 0.2s ease;">Impressum</a>
+        <a href="mailto:shellyy222@web.de" style="font-size: 0.82rem; font-weight: 500; color: rgba(250,246,240,0.45); text-decoration: none; transition: color 0.2s ease;">Kontakt</a>
+      </nav>
+    </div>
+
+    <!-- Bottom row -->
+    <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px;">
+      <p style="font-size: 0.75rem; color: rgba(250,246,240,0.25); margin: 0;">
+        © 2026 The Next Chapter · Germany. All rights reserved.
+      </p>
+      <p style="font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(196,164,124,0.45); margin: 0;">
+       The next Chapter · Better You
+      </p>
+    </div>
+
+  </div>
+</footer>
+
+
+<!-- ══════════════════════════════════════════════
+     SCRIPTS
+══════════════════════════════════════════════ -->
+<script>
+  // Nav shadow on scroll
+  const nav = document.getElementById('nav')
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('nav-scrolled', window.scrollY > 20)
+  }, { passive: true })
+</script>
+
+</body>
+</html>

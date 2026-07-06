@@ -24,9 +24,12 @@ while ($listener.IsListening) {
   $req = $ctx.Request
   $res = $ctx.Response
 
-  $urlPath = $req.Url.LocalPath
+  $urlPath = [System.Uri]::UnescapeDataString($req.Url.LocalPath)
   if ($urlPath -eq '/') { $urlPath = '/index.html' }
   $filePath = Join-Path $root ($urlPath.TrimStart('/').Replace('/', '\'))
+  if (-not [System.IO.Path]::GetExtension($filePath) -and -not (Test-Path $filePath -PathType Leaf)) {
+    $filePath += '.html'
+  }
 
   if (Test-Path $filePath -PathType Leaf) {
     $ext = [System.IO.Path]::GetExtension($filePath).ToLower()

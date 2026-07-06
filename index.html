@@ -542,12 +542,12 @@
         </p>
 
         <!-- Form -->
-        <form id="guide-form" onsubmit="handleGuideSubmit(event)" style="display: flex; flex-direction: column; gap: 16px;">
+        <form id="guide-form" action="https://e427ef63.sibforms.com/serve/MUIFAFesC_0ItGttKsf_3bUQBvTBvB209q6b6iiuFLQdvZOBC8BaezHcSUgFP_MCi9rDMS95oNsXpz5h7LLDLMXjw5K8jCNxakiQAnEg1-pWcdJThZIzcZcMref2aEqFuFKhEKBrGt-fGPH5OJEv5vUQe8NHom3M-1D_ql7ufw9Z15beTN5OE--RJF_i8qtwwgOa3Jh1W3miozBojA==" method="POST" onsubmit="handleGuideSubmit(event)" style="display: flex; flex-direction: column; gap: 16px;">
 
           <!-- Name field -->
           <div style="display: flex; flex-direction: column; gap: 6px;">
             <label for="guide-name" style="font-size: 0.78rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #6B6560;">Dein Name</label>
-            <input id="guide-name" type="text" name="name" placeholder="z.B. Anna Müller" required
+            <input id="guide-name" type="text" name="VORNAME" placeholder="z.B. Anna Müller" required
               style="padding: 14px 18px; border: 1.5px solid rgba(12,10,11,0.12); border-radius: 12px; font-family: 'Montserrat', sans-serif; font-size: 0.92rem; color: #0C0C0C; background: #FAF6F0; outline: none; transition: border-color 0.2s ease, box-shadow 0.2s ease;"
               onfocus="this.style.borderColor='#8B1527'; this.style.boxShadow='0 0 0 3px rgba(139,21,39,0.08)'"
               onblur="this.style.borderColor='rgba(12,10,11,0.12)'; this.style.boxShadow='none'">
@@ -556,15 +556,28 @@
           <!-- Email field -->
           <div style="display: flex; flex-direction: column; gap: 6px;">
             <label for="guide-email" style="font-size: 0.78rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #6B6560;">Deine E-Mail-Adresse</label>
-            <input id="guide-email" type="email" name="email" placeholder="deine@email.de" required
+            <input id="guide-email" type="email" name="EMAIL" placeholder="deine@email.de" required
               style="padding: 14px 18px; border: 1.5px solid rgba(12,10,11,0.12); border-radius: 12px; font-family: 'Montserrat', sans-serif; font-size: 0.92rem; color: #0C0C0C; background: #FAF6F0; outline: none; transition: border-color 0.2s ease, box-shadow 0.2s ease;"
               onfocus="this.style.borderColor='#8B1527'; this.style.boxShadow='0 0 0 3px rgba(139,21,39,0.08)'"
               onblur="this.style.borderColor='rgba(12,10,11,0.12)'; this.style.boxShadow='none'">
           </div>
 
+          <!-- Privacy / newsletter consent -->
+          <label style="display: flex; align-items: flex-start; gap: 10px; cursor: pointer;">
+            <input id="guide-consent" type="checkbox" name="NEWSLETTER" value="true" required
+              style="margin-top: 3px; width: 16px; height: 16px; flex-shrink: 0; accent-color: #8B1527; cursor: pointer;">
+            <span style="font-size: 0.8rem; line-height: 1.6; color: #6B6560;">Ich möchte den kostenlosen Guide erhalten, den Newsletter abonnieren und akzeptiere die <a href="/datenschutz" target="_blank" rel="noopener" style="color: #8B1527; text-decoration: underline; font-weight: 600;">Datenschutzerklärung</a>.</span>
+          </label>
+
+          <input type="text" name="email_address_check" value="" class="input--hidden" style="display: none;" tabindex="-1" autocomplete="off">
+          <input type="hidden" name="locale" value="de">
+
+          <!-- Inline error message (hidden unless validation or submission fails) -->
+          <p id="guide-error" style="display: none; font-size: 0.8rem; color: #8B1527; margin: 0; line-height: 1.5;"></p>
+
           <!-- Submit -->
-          <button type="submit" class="btn-primary" style="width: 100%; justify-content: center; padding: 16px 32px; border: none; margin-top: 8px; font-size: 0.92rem;">
-            Kostenlosen Guide erhalten
+          <button id="guide-submit" type="submit" class="btn-primary" style="width: 100%; justify-content: center; padding: 16px 32px; border: none; margin-top: 8px; font-size: 0.92rem;">
+            <span id="guide-submit-label">Kostenlosen Guide erhalten</span>
             <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </button>
 
@@ -575,8 +588,11 @@
           <div style="width: 56px; height: 56px; border-radius: 50%; background: #F5EEE4; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px;">
             <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><path d="M6 14l6 6 10-10" stroke="#8B1527" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </div>
-          <h4 style="font-family: 'Cinzel', serif; font-size: 1.1rem; font-weight: 700; color: #0C0C0C; margin: 0 0 8px;">Guide ist unterwegs!</h4>
-          <p style="font-size: 0.88rem; color: #6B6560; line-height: 1.7; margin: 0;">Schau in dein Postfach — dein Guide ist auf dem Weg zu dir.</p>
+          <h4 style="font-family: 'Cinzel', serif; font-size: 1.1rem; font-weight: 700; color: #0C0C0C; margin: 0 0 8px;">Fast geschafft!</h4>
+          <p style="font-size: 0.88rem; color: #6B6560; line-height: 1.7; margin: 0 0 12px;">Vielen Dank für deine Anmeldung!</p>
+          <p style="font-size: 0.88rem; color: #6B6560; line-height: 1.7; margin: 0 0 12px;">Wir haben dir soeben eine E-Mail zur Bestätigung geschickt.</p>
+          <p style="font-size: 0.88rem; color: #6B6560; line-height: 1.7; margin: 0 0 12px;">Bitte öffne dein Postfach und bestätige deine E-Mail-Adresse über den enthaltenen Link. Erst danach erhältst du sofort Zugriff auf deinen kostenlosen Guide.</p>
+          <p style="font-size: 0.88rem; color: #6B6560; line-height: 1.7; margin: 0;">Falls du innerhalb weniger Minuten keine E-Mail findest, schau bitte auch in deinem Spam- oder Junk-Ordner nach. Damit du künftig keine Neuigkeiten oder deinen Guide verpasst, markiere unsere E-Mail am besten als »Kein Spam«.</p>
         </div>
 
         <!-- Privacy note -->
@@ -868,8 +884,8 @@
       <nav style="display: flex; flex-wrap: wrap; gap: 32px;" aria-label="Footer navigation">
         <a href="#hero" style="font-size: 0.82rem; font-weight: 500; color: rgba(250,246,240,0.45); text-decoration: none; transition: color 0.2s ease;">Home</a>
         <a href="#programs" style="font-size: 0.82rem; font-weight: 500; color: rgba(250,246,240,0.45); text-decoration: none; transition: color 0.2s ease;">Unser Programm</a>
-        <a href="#Programs" style="font-size: 0.82rem; font-weight: 500; color: rgba(250,246,240,0.45); text-decoration: none; transition: color 0.2s ease;">Datenschutz</a>
-        <a href="#reviews" style="font-size: 0.82rem; font-weight: 500; color: rgba(250,246,240,0.45); text-decoration: none; transition: color 0.2s ease;">Impressum</a>
+        <a href="/datenschutz" style="font-size: 0.82rem; font-weight: 500; color: rgba(250,246,240,0.45); text-decoration: none; transition: color 0.2s ease;">Datenschutz</a>
+        <a href="/impressum" style="font-size: 0.82rem; font-weight: 500; color: rgba(250,246,240,0.45); text-decoration: none; transition: color 0.2s ease;">Impressum</a>
         <a href="mailto:shellyy222@web.de" style="font-size: 0.82rem; font-weight: 500; color: rgba(250,246,240,0.45); text-decoration: none; transition: color 0.2s ease;">Kontakt</a>
       </nav>
     </div>
@@ -913,20 +929,70 @@
     nav.classList.toggle('nav-scrolled', window.scrollY > 20)
   }, { passive: true })
 
-  // Guide form submission
+  // Guide form submission (Brevo Double Opt-In)
   function handleGuideSubmit(e) {
     e.preventDefault()
     const form = document.getElementById('guide-form')
-    const success = document.getElementById('guide-success')
-    form.style.opacity = '0'
-    form.style.transition = 'opacity 0.3s ease'
-    setTimeout(() => {
-      form.style.display = 'none'
-      success.style.display = 'block'
-      success.style.opacity = '0'
-      success.style.transition = 'opacity 0.4s ease'
-      requestAnimationFrame(() => { success.style.opacity = '1' })
-    }, 300)
+    const errorEl = document.getElementById('guide-error')
+    const submitBtn = document.getElementById('guide-submit')
+    const submitLabel = document.getElementById('guide-submit-label')
+    const nameInput = document.getElementById('guide-name')
+    const emailInput = document.getElementById('guide-email')
+    const consentInput = document.getElementById('guide-consent')
+
+    const showError = (msg) => {
+      errorEl.textContent = msg
+      errorEl.style.display = 'block'
+    }
+    errorEl.style.display = 'none'
+
+    // Validate
+    const name = nameInput.value.trim()
+    const email = emailInput.value.trim()
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    if (!name) {
+      showError('Bitte gib deinen Namen ein.')
+      nameInput.focus()
+      return
+    }
+    if (!email || !emailPattern.test(email)) {
+      showError('Bitte gib eine gültige E-Mail-Adresse ein.')
+      emailInput.focus()
+      return
+    }
+    if (!consentInput.checked) {
+      showError('Bitte akzeptiere die Datenschutzerklärung, um fortzufahren.')
+      consentInput.focus()
+      return
+    }
+    submitBtn.disabled = true
+    submitBtn.style.opacity = '0.7'
+    submitLabel.textContent = 'Wird gesendet ...'
+
+    fetch(form.action, { method: 'POST', body: new FormData(form) })
+      .then((res) => res.json())
+      .then((data) => {
+        if (!data || data.success === false) {
+          throw new Error((data && data.message) || 'unknown')
+        }
+        const success = document.getElementById('guide-success')
+        form.style.opacity = '0'
+        form.style.transition = 'opacity 0.3s ease'
+        setTimeout(() => {
+          form.style.display = 'none'
+          success.style.display = 'block'
+          success.style.opacity = '0'
+          success.style.transition = 'opacity 0.4s ease'
+          requestAnimationFrame(() => { success.style.opacity = '1' })
+        }, 300)
+        setTimeout(() => { window.location.href = '/confirm-email' }, 1400)
+      })
+      .catch(() => {
+        submitBtn.disabled = false
+        submitBtn.style.opacity = '1'
+        submitLabel.textContent = 'Kostenlosen Guide erhalten'
+        showError('Deine Anmeldung konnte nicht gespeichert werden. Bitte versuche es erneut.')
+      })
   }
 
   // "Discover More" link hover gap increase

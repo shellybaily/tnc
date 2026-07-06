@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Impressum — The Next Chapter</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary:      '#8B1527',
+            'primary-lt': '#A3202F',
+            'primary-dk': '#6B1020',
+            'primary-deep':'#3D0910',
+            'primary-tint':'#F2E6E8',
+            'rose-creme': '#C4A47C',
+            'rose-lt':    '#DEC9A8',
+            'rose-tint':  '#F5EEE4',
+            cream:        '#FAF6F0',
+            'cream-dk':   '#EDE8E1',
+            charcoal:     '#0C0A0B',
+            stone:        '#6B6560',
+            silver:       '#9BAAB5',
+          },
+          fontFamily: {
+            display: ['Cinzel', 'Georgia', 'serif'],
+            body:    ['Montserrat', 'system-ui', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    :root {
+      --bordeaux:   #8B1527;
+      --bordeaux-lt:#A3202F;
+      --rose-creme: #C4A47C;
+      --rose-tint:  #F5EEE4;
+      --soft-beige: #EDE8E1;
+      --cream:      #FAF6F0;
+      --charcoal:   #0C0A0B;
+      --stone:      #6B6560;
+      --silver:     #9BAAB5;
+    }
+    body { font-family: 'Montserrat', sans-serif; background: var(--cream); color: var(--charcoal); -webkit-font-smoothing: antialiased; margin: 0; }
+
+    /* ── Nav ── */
+    .nav-link {
+      font-family: 'Montserrat', sans-serif; font-size: 0.85rem; font-weight: 500;
+      color: #0C0C0C; text-decoration: none; position: relative;
+      transition: color 0.2s ease;
+    }
+    .nav-link::after {
+      content: ''; position: absolute; bottom: -3px; left: 0; right: 100%;
+      height: 1.5px; background: #8B1527;
+      transition: right 0.28s cubic-bezier(0.34,1.56,0.64,1);
+    }
+    .nav-link:hover { color: #8B1527; }
+    .nav-link:hover::after { right: 0; }
+    .nav-link:focus-visible { outline: 2px solid #8B1527; outline-offset: 4px; }
+
+    .btn-primary {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      background: #6F060D; color: #FAF6F0; font-family: 'Montserrat', sans-serif;
+      font-weight: 600; font-size: 0.875rem; letter-spacing: 0.04em;
+      padding: 14px 32px; border-radius: 100px;
+      box-shadow: 0 4px 20px rgba(111,6,13,0.35), 0 1px 6px rgba(111,6,13,0.18);
+      transition: transform 0.3s cubic-bezier(0.4,0,0.2,1),
+                  background 0.3s cubic-bezier(0.4,0,0.2,1),
+                  color 0.3s cubic-bezier(0.4,0,0.2,1),
+                  box-shadow 0.3s cubic-bezier(0.4,0,0.2,1);
+      cursor: pointer; text-decoration: none;
+    }
+    .btn-primary:hover { background: #A6C9FC; color: #0C0C0C; transform: translateY(-2px); box-shadow: 0 10px 25px rgba(166,201,252,0.35); }
+    .btn-primary:active { transform: translateY(0); }
+    .btn-primary:focus-visible { outline: 2px solid #6F060D; outline-offset: 3px; }
+
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: 'Montserrat', sans-serif; font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 0.12em; text-transform: uppercase; color: #8B1527;
+    }
+    .eyebrow-dot { width: 6px; height: 6px; border-radius: 50%; background: #8B1527; flex-shrink: 0; }
+
+    .nav-scrolled { box-shadow: 0 1px 20px rgba(0,0,0,0.07); }
+
+    /* ── Legal content typography ── */
+    .legal h2 {
+      font-family: 'Cinzel', serif; font-weight: 700; letter-spacing: -0.01em;
+      color: #0C0C0C; font-size: clamp(1.2rem, 2.2vw, 1.5rem);
+      margin: 56px 0 18px;
+    }
+    .legal h2:first-of-type { margin-top: 0; }
+    .legal p { font-size: 0.95rem; line-height: 1.85; color: #6B6560; margin: 0 0 16px; }
+    .legal ul { margin: 0 0 16px; padding-left: 22px; display: flex; flex-direction: column; gap: 8px; }
+    .legal li { font-size: 0.95rem; line-height: 1.75; color: #6B6560; }
+    .legal a { color: #8B1527; text-decoration: underline; font-weight: 600; }
+    .legal strong { color: #0C0C0C; }
+
+    .todo-box {
+      background: var(--rose-tint); border: 1.5px dashed rgba(139,21,39,0.4);
+      border-radius: 16px; padding: 24px 28px; margin: 0 0 40px;
+    }
+    .todo-box p { color: #6B1020; margin: 0 0 10px; }
+    .todo-box ul { margin: 0; padding-left: 20px; }
+    .todo-box li { color: #6B1020; }
+
+    @media (max-width: 767px) {
+      .hero-grid { grid-template-columns: 1fr !important; }
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- ══════════════════════════════════════════════
+     NAVIGATION
+══════════════════════════════════════════════ -->
+<nav id="nav" style="position: fixed; top: 0; left: 0; right: 0; z-index: 50; background: rgba(250,246,240,0.96); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid rgba(12,12,12,0.07); transition: box-shadow 0.3s ease;">
+  <div style="max-width: 1200px; margin: 0 auto; padding: 0 24px; height: 116px; display: flex; align-items: center; justify-content: space-between;">
+
+    <a href="/" aria-label="The Next Chapter Home" style="flex-shrink: 0;">
+      <img src="brand_assets/Logo Transparent.png" alt="The Next Chapter" style="height: 104px; width: auto;">
+    </a>
+
+    <div class="hidden md:flex" style="gap: 36px; align-items: center;">
+      <a href="/#hero" class="nav-link">Home</a>
+      <a href="/#Mehrwert" class="nav-link">Dein Weg</a>
+      <a href="/#programs" class="nav-link">Unser Programm</a>
+      <a href="https://calendly.com/tnchapter/30min" target="_blank" rel="noopener noreferrer" class="nav-link">Termin vereinbaren</a>
+    </div>
+
+    <a href="/#guide" class="btn-primary" style="font-size: 0.8rem; padding: 10px 24px;">kostenloser Guide</a>
+
+  </div>
+</nav>
+
+
+<!-- ══════════════════════════════════════════════
+     IMPRESSUM
+══════════════════════════════════════════════ -->
+<section style="padding: 168px 24px 96px; background: #FAF6F0;">
+  <div style="max-width: 760px; margin: 0 auto;">
+
+    <div class="eyebrow" style="margin-bottom: 20px;">
+      <span class="eyebrow-dot"></span>
+      Rechtliches
+    </div>
+    <h1 style="font-family: 'Cinzel', serif; font-size: clamp(2rem, 4vw, 2.8rem); font-weight: 700; line-height: 1.15; letter-spacing: -0.02em; color: #0C0C0C; margin: 0 0 16px;">
+      Impressum
+    </h1>
+    <p style="font-size: 0.85rem; color: #9BAAB5; margin: 0 0 48px;">Stand: Juli 2026</p>
+
+    <div class="todo-box">
+      <p style="font-weight: 700;">⚠ Vor Veröffentlichung noch zu ergänzen</p>
+      <p>Diese Seite enthält Platzhalter, da folgende gesetzlich vorgeschriebene Angaben noch fehlen. Bitte vollständig ausfüllen, bevor die Website live geht — ein unvollständiges Impressum ist in Deutschland abmahnfähig:</p>
+      <ul>
+        <li>Vollständiger Name / Firmierung und Rechtsform</li>
+        <li>Ladungsfähige Anschrift (Straße, Hausnummer, PLZ, Ort, Land)</li>
+        <li>Vertretungsberechtigte Person(en), sofern es sich nicht um eine natürliche Person als Einzelunternehmer:in handelt</li>
+        <li>Telefonnummer</li>
+        <li>Handelsregister, Vereinsregister, Partnerschaftsregister o. Ä. inkl. Registergericht und Registernummer, falls eingetragen</li>
+        <li>Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG, falls vorhanden</li>
+        <li>Angabe, ob journalistisch-redaktionelle Inhalte angeboten werden, die eine verantwortliche Person nach § 18 Abs. 2 MStV erfordern</li>
+        <li>Ihre Entscheidung/Angabe zur Teilnahme an einem Verbraucherschlichtungsverfahren gemäß § 36 VSBG</li>
+      </ul>
+    </div>
+
+    <div class="legal">
+
+      <h2 id="angaben">Angaben gemäß § 5 DDG</h2>
+      <p>
+        <strong>[BITTE ERGÄNZEN: Vollständiger Name / Firma, Rechtsform]</strong><br>
+        [BITTE ERGÄNZEN: Straße und Hausnummer]<br>
+        [BITTE ERGÄNZEN: PLZ und Ort]<br>
+        Deutschland
+      </p>
+      <p><strong>Vertreten durch:</strong><br>[BITTE ERGÄNZEN: Name der vertretungsberechtigten Person, z. B. Inhaber:in / Geschäftsführung — sofern nicht als Einzelperson selbst identisch mit den obigen Angaben]</p>
+
+      <h2 id="kontakt">Kontakt</h2>
+      <p>
+        Telefon: [BITTE ERGÄNZEN]<br>
+        E-Mail: <a href="mailto:shellyy222@web.de">shellyy222@web.de</a>
+      </p>
+
+      <h2 id="register">Registereintrag</h2>
+      <p>[BITTE ERGÄNZEN: Falls im Handelsregister, Vereinsregister, Partnerschaftsregister o. Ä. eingetragen — sonst diesen Abschnitt entfernen:]<br>
+      Eintragung im [BITTE ERGÄNZEN: Registerart]<br>
+      Registergericht: [BITTE ERGÄNZEN]<br>
+      Registernummer: [BITTE ERGÄNZEN]</p>
+
+      <h2 id="ust">Umsatzsteuer-Identifikationsnummer</h2>
+      <p>Umsatzsteuer-Identifikationsnummer gemäß § 27a Umsatzsteuergesetz: [BITTE ERGÄNZEN, falls vorhanden — andernfalls diesen Abschnitt entfernen]</p>
+
+      <h2 id="mstv">Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h2>
+      <p>[BITTE PRÜFEN UND ERGÄNZEN: Diese Angabe ist nur erforderlich, sofern die Website journalistisch-redaktionelle Inhalte mit meinungsbildender Wirkung anbietet, z. B. einen Blog mit eigenen redaktionellen Beiträgen. Sollte dies zutreffen, tragen Sie hier Name und Anschrift der verantwortlichen Person ein. Ist dies nicht der Fall, kann dieser Abschnitt entfallen.]</p>
+
+      <h2 id="streitschlichtung">Verbraucherstreitbeilegung</h2>
+      <p>Die Online-Streitbeilegungs-Plattform (OS-Plattform) der Europäischen Kommission wurde von der EU-Kommission zum 20. Juli 2025 eingestellt; ein entsprechender Link kann daher nicht mehr bereitgestellt werden.</p>
+      <p>[BITTE ERGÄNZEN: Angabe, ob eine Bereitschaft oder Verpflichtung zur Teilnahme an einem Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle gemäß § 36 VSBG besteht. Beispiel: „Wir sind nicht bereit und nicht verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen." oder Angabe der zuständigen Schlichtungsstelle, falls eine Teilnahme erfolgt.]</p>
+
+      <h2 id="haftung-inhalte">Haftung für Inhalte</h2>
+      <p>Als Diensteanbieter sind wir gemäß § 7 Abs. 1 DDG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 DDG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.</p>
+      <p>Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.</p>
+
+      <h2 id="haftung-links">Haftung für Links</h2>
+      <p>Unser Angebot enthält Links zu externen Websites Dritter (z. B. Calendly), auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.</p>
+      <p>Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar. Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.</p>
+
+      <h2 id="urheberrecht">Urheberrecht</h2>
+      <p>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet.</p>
+      <p>Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt wurden, werden die Urheberrechte Dritter beachtet. Sollten Sie trotzdem auf eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen entsprechenden Hinweis an die oben genannte E-Mail-Adresse. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Inhalte umgehend entfernen.</p>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════
+     FOOTER
+══════════════════════════════════════════════ -->
+<footer style="background: #0F0709; border-top: 1px solid rgba(250,246,240,0.06); padding: 64px 24px 40px;">
+  <div style="max-width: 1200px; margin: 0 auto;">
+
+    <!-- Top row -->
+    <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 32px; padding-bottom: 40px; border-bottom: 1px solid rgba(250,246,240,0.08); margin-bottom: 32px;">
+      <a href="/" aria-label="The Next Chapter">
+        <img src="brand_assets/Logo Transparent.png" alt="The Next Chapter" style="height: 112px; width: auto; filter: brightness(0) invert(1); opacity: 0.8;">
+      </a>
+      <nav style="display: flex; flex-wrap: wrap; gap: 32px;" aria-label="Footer navigation">
+        <a href="/#hero" style="font-size: 0.82rem; font-weight: 500; color: rgba(250,246,240,0.45); text-decoration: none; transition: color 0.2s ease;">Home</a>
+        <a href="/#programs" style="font-size: 0.82rem; font-weight: 500; color: rgba(250,246,240,0.45); text-decoration: none; transition: color 0.2s ease;">Unser Programm</a>
+        <a href="/datenschutz" style="font-size: 0.82rem; font-weight: 500; color: rgba(250,246,240,0.45); text-decoration: none; transition: color 0.2s ease;">Datenschutz</a>
+        <a href="/impressum" style="font-size: 0.82rem; font-weight: 500; color: rgba(250,246,240,0.45); text-decoration: none; transition: color 0.2s ease;">Impressum</a>
+        <a href="mailto:shellyy222@web.de" style="font-size: 0.82rem; font-weight: 500; color: rgba(250,246,240,0.45); text-decoration: none; transition: color 0.2s ease;">Kontakt</a>
+      </nav>
+    </div>
+
+    <!-- Bottom row -->
+    <div style="display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px;">
+      <p style="font-size: 0.75rem; color: rgba(250,246,240,0.25); margin: 0;">
+        © 2026 The Next Chapter · Germany. All rights reserved.
+      </p>
+      <p style="font-family: 'Cinzel', serif; font-size: 0.62rem; letter-spacing: 0.22em; text-transform: uppercase; color: rgba(196,164,124,0.45); margin: 0;">
+       The next Chapter · Better You
+      </p>
+    </div>
+
+  </div>
+</footer>
+
+
+<!-- ══════════════════════════════════════════════
+     SCRIPTS
+══════════════════════════════════════════════ -->
+<script>
+  // Nav shadow on scroll
+  const nav = document.getElementById('nav')
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('nav-scrolled', window.scrollY > 20)
+  }, { passive: true })
+</script>
+
+</body>
+</html>
