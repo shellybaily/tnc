@@ -16,7 +16,11 @@ const mime = {
 http.createServer((req, res) => {
   const url = decodeURIComponent(req.url.split('?')[0])
   let filePath = path.join(__dirname, url === '/' ? 'index.html' : url)
-  if (!path.extname(filePath) && !fs.existsSync(filePath)) filePath += '.html'
+  if (fs.existsSync(filePath) && fs.statSync(filePath).isDirectory()) {
+    filePath = path.join(filePath, 'index.html')
+  } else if (!path.extname(filePath) && !fs.existsSync(filePath)) {
+    filePath += '.html'
+  }
   const ext = path.extname(filePath)
   fs.readFile(filePath, (err, data) => {
     if (err) { res.writeHead(404); res.end('Not found'); return }

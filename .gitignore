@@ -3,3 +3,6 @@ chatgpt/
 Fullsize screen.png
 serve_err.log
 serve_out.log
+.env
+.env.local
+.vercel
